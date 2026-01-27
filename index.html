@@ -6,26 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
 </head>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  // Mobile menu (jika ada)
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("navMenu");
+
+  if (hamburger && navMenu) {
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+  }
+
+  // Scroll animation
+  const elements = document.querySelectorAll('.fade-up');
+
+  function animateOnScroll() {
+    elements.forEach(el => {
+      const pos = el.getBoundingClientRect().top;
+      const screen = window.innerHeight - 100;
+
+      if (pos < screen) {
+        el.classList.add('show');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', animateOnScroll);
+  animateOnScroll();
+
+});
+</script>
+
+
 <body>
 
-<section class="hero">
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo">Kevin</div>
+
+    <nav id="navMenu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="projects.html">Projects</a>
+      <a href="assets/cv/cv.pdf" class="nav-btn" download>Download CV</a>
+    </nav>
+
+    <div class="hamburger" id="hamburger">☰</div>
+  </div>
+</header>
+
+<section id="home"class="hero">
     <div class="container hero-grid">
         <div>
             <h1>Ignatius Kevin Widian</h1>
+            <h1></h1>
+            <h1></h1>
             <h3>IT Support | CCTV Engineer | Security System Enthusiast</h3>
-            <p>
-                Profesional IT dengan pengalaman IT Support, Technician,
-                hingga Supervisor Technician. Fokus pada sistem yang
-                andal, aman, dan efisien.
-            </p>
             
-            <a href="assets/cv/cv.pdf"
-               style="display:inline-block;margin-top:20px;
-               background:#2c5364;color:#fff;
-               padding:12px 20px;border-radius:6px;
-               text-decoration:none;">
-               Download CV
-            </a>
+
         </div>
         
           <div>
@@ -36,47 +79,64 @@
     </div>
 </section>
 
-<section>
-    <div class="container">
-        <h2>Tentang Saya</h2>
-        <p>
-            Saya memiliki pengalaman lebih dari 3 tahun di bidang IT Support dan
-            Technical Operations, termasuk instalasi CCTV, jaringan dasar,
-            troubleshooting, serta pengelolaan tim teknisi.
-        </p>
-    </div>
+<section id="about">
+  <div class="container fade-up">
+    <h2>About</h2>
+    <div class="card fade-up">
+    <p>
+      Saya memiliki latar belakang pendidikan Teknik Komputer dan Jaringan serta pengalaman kerja di bidang IT Support dan Security System selama lebih dari lima tahun.
+
+      Sehari-hari saya terbiasa menangani berbagai kebutuhan teknis seperti troubleshooting hardware dan software, instalasi dan konfigurasi jaringan, serta pemasangan dan pemeliharaan sistem keamanan seperti CCTV, Access Control System, server, dan perangkat pendukung lainnya.
+
+      Selain pekerjaan teknis, saya juga terbiasa bekerja langsung di lapangan, berkoordinasi dengan tim maupun klien, serta memastikan setiap sistem dapat berjalan dengan stabil dan sesuai kebutuhan operasional.
+
+      Saat ini saya bekerja sebagai Supervisor Technician, di mana saya terlibat dalam pengelolaan tim teknisi, perencanaan pekerjaan instalasi dan maintenance, serta monitoring kualitas hasil pekerjaan. Saya senang mempelajari teknologi baru, meningkatkan keterampilan teknis, dan mencari solusi yang praktis untuk setiap permasalahan di lapangan.
+    </p>
+  </div>
 </section>
 
-<section>
-    <div class="container">
-        <h2>Pengalaman Kerja</h2>
 
-        <div class="card">
-            <h3>IT Support</h3>
-            <small>July 15, 2019 – October 22, 2020</small>
+<section id="experience">
+    <div class="container fade-up">
+        <h2>Experience</h2>
+
+        <div class="card fade-up">
+            <h3>IT Support – PT Super Teknik</h3>
+            <small>15 Juli 2019 – 22 Oktober 2020</small>
             <ul>
-                <li>Troubleshooting hardware & software</li>
-                <li>Instalasi perangkat IT</li>
+                <li>Troubleshooting hardware (PC, laptop, printer, CCTV, server)</li>
+                <li>Troubleshooting software (Windows, macOS, aplikasi perkantoran)</li>
+                <li>Instalasi & konfigurasi jaringan (LAN, WiFi, router, switch)</li>
+                <li>Remote support menggunakan AnyDesk, TeamViewer, dan RDP</li>
+                <li>Dokumentasi IT dan penyusunan SOP troubleshooting</li>
+                <li>Backup database server</li>
+                <li>OS patching & update, instalasi aplikasi, dan user provisioning</li>
                 <li>Dukungan teknis user</li>
             </ul>
         </div>
 
-        <div class="card">
-            <h3>Technician</h3>
-            <small>April 12, 2021 – December 31, 2021</small>
+        <div class="card fade-up">
+            <h3>Technician – PT Putradabo Perkasa</h3>
+            <small>12 April 2021 – 31 Desember 2021</small>
             <ul>
-                <li>Instalasi & maintenance perangkat</li>
-                <li>Penanganan gangguan lapangan</li>
+                <li>Instalasi sistem keamanan (CCTV, Access Control, server, dan jaringan)</li>
+                <li>Maintenance perangkat security system di area operasional dan end user</li>
+                <li>Support teknis lapangan untuk troubleshooting sistem</li>
             </ul>
         </div>
 
-        <div class="card">
+        <div class="card fade-up">
             <h3>Supervisor Technician</h3>
-            <small>January 1, 2022 – Present</small>
+            <small>1 Januari 2022 – Present</small>
             <ul>
-                <li>Memimpin dan mengawasi tim teknisi</li>
-                <li>Monitoring kualitas pekerjaan</li>
-                <li>Koordinasi dengan manajemen</li>
+                <li>Memimpin dan mengawasi tim teknisi proyek dan maintenance</li>
+                <li>Preventive maintenance security system untuk klien seperti Lintasarta, BDx, dan Telkomsigma</li>
+                <li>Pengelolaan sistem: Server, CCTV, VMS, Access Control, Patrol Guard, Barrier Gate, Metal Detector, Visitor Management, Switch, dan NVR</li>
+                <li>Koordinasi dengan klien dan manajemen proyek</li>
+                <li>Evaluasi kualitas instalasi dan performa sistem</li>
+                <li>QC Pekerjaan : Cek hasil instalasi & maintenance, Pastikan sesuai SOP & spesifikasi proyek, test fungsi perangkat, testing commisioning & BAST</li>
+                <li>presalales support : surveyy lokasi, menentukan survey lokasi, support demo/PoC</li>
+                <li>Dokumentasi dan laporan :Laporan maintenance, Checklist QC, AS-built drawing, inventory device, SLD, shopdrawing, MOP, Material Approval</li>
             </ul>
         </div>
 
@@ -84,15 +144,53 @@
 </section>
 
 <section>
-    <div class="container">
-        <h2>Keahlian</h2>
-        <div class="skills">
-            <div class="skill">IT Support</div>
-            <div class="skill">CCTV System</div>
-            <div class="skill">Basic Networking</div>
-            <div class="skill">Security System</div>
-            <div class="skill">Team Supervision</div>
-            <div class="skill">Troubleshooting</div>
+    <div class="container fade-up">
+        <h2>Technical Skills</h2>
+        <div class="skills fade-up">
+            <div class="skill fade-up">IT Support</div>
+            <div class="skill fade-up">Hardware & Software Troubleshooting</div>
+            <div class="skill fade-up">Windows Installation & Configuration</div>
+            <div class="skill fade-up">Basic Networking (LAN, TCP/IP, Router, Switch)</div>
+            <div class="skill fade-up">CCTV System Installation & Maintenance</div>
+            <div class="skill fade-up">Access Control System (ACS) & Barrier Gate System</div>
+            <div class="skill fade-up">Server Setup & Monitoring</div>
+            <div class="skill fade-up">Visitor Management System</div>
+            <div class="skill fade-up">Network & Device Maintenance</div>
+            <div class="skill fade-up">Metal Detector & Patrol Guard System</div>
+            <div class="skill fade-up">Security System Preventive Maintenance</div>
+            <div class="skill fade-up">Remote Support (AnyDesk, TeamViewer, RDP)</div> 
+            <div class="skill fade-up">VMS (NX Witness, Hikvision, dll)</div> 
+
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="container fade-up">
+        <h2>Soft Skills</h2>
+        <div class="skills fade-up">
+            <div class="skill fade-up">Team Supervision</div>
+            <div class="skill fade-up">Technical Documentation</div>
+            <div class="skill fade-up">Problem Solving</div>
+            <div class="skill fade-up">Communication with Clients</div>
+            <div class="skill fade-up">Project Coordination</div>
+            <div class="skill fade-up">Time Management</div>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="container fade-up">
+        <h2>Certified</h2>
+        <div class="skills fade-up">
+            <div class="skill fade-up">CGSA-CCTV</div>
+            <div class="skill fade-up">HCSA-HACE</div>
+            <div class="skill fade-up">HCSA-HIPC</div>
+            <div class="skill fade-up">HCSA-HNET</div>
+            <div class="skill fade-up">DHCA-DoLynk</div>
+            <div class="skill fade-up">NX Witness</div>
         </div>
     </div>
 </section>
@@ -101,13 +199,10 @@
     <p>© <span id="year"></span> Ignatius Kevin Widian | IT Support & Technical Supervisor</p>
 </footer>
 
-<button id="darkToggle" class="dark-toggle">🌙 Dark</button>
-
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 
 const btn = document.getEl
-
 
 
 
