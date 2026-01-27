@@ -1,0 +1,91 @@
+<?php get_header(); ?>
+
+<section class="hero">
+    <div class="container hero-grid">
+        <div>
+            <h1>Ignatius Kevin Widian</h1>
+            <h3>IT Support | CCTV Engineer | Security System Enthusiast</h3>
+            <p>
+                Profesional IT dengan pengalaman IT Support, Technician,
+                hingga Supervisor Technician. Fokus pada sistem yang
+                andal, aman, dan efisien.
+            </p>
+
+            <!-- TOMBOL DOWNLOAD CV -->
+            <a href="<?php echo get_template_directory_uri(); ?>/assets/cv/CV-Ignatius-Kevin-Widian.pdf"
+               style="display:inline-block;margin-top:20px;
+               background:#2c5364;color:#fff;
+               padding:12px 20px;border-radius:6px;
+               text-decoration:none;">
+               Download CV
+            </a>
+        </div>
+
+        <div>
+            <img src="https://ignatiuskevinwidian-dqrnp.wordpress.com/wp-content/uploads/2026/01/oip.jpg" alt="IT Portfolio">
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Tentang Saya</h2>
+        <p>
+            Saya memiliki pengalaman lebih dari 3 tahun di bidang IT Support dan
+            Technical Operations, termasuk instalasi CCTV, jaringan dasar,
+            troubleshooting, serta pengelolaan tim teknisi.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Pengalaman Kerja</h2>
+
+        <div class="card">
+            <h3>IT Support</h3>
+            <small>July 15, 2019 – October 22, 2020</small>
+            <ul>
+                <li>Troubleshooting hardware & software</li>
+                <li>Instalasi perangkat IT</li>
+                <li>Dukungan teknis user</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Technician</h3>
+            <small>April 12, 2021 – December 31, 2021</small>
+            <ul>
+                <li>Instalasi & maintenance perangkat</li>
+                <li>Penanganan gangguan lapangan</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Supervisor Technician</h3>
+            <small>January 1, 2022 – Present</small>
+            <ul>
+                <li>Memimpin dan mengawasi tim teknisi</li>
+                <li>Monitoring kualitas pekerjaan</li>
+                <li>Koordinasi dengan manajemen</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Keahlian</h2>
+        <div class="skills">
+            <div class="skill">IT Support</div>
+            <div class="skill">CCTV System</div>
+            <div class="skill">Basic Networking</div>
+            <div class="skill">Security System</div>
+            <div class="skill">Team Supervision</div>
+            <div class="skill">Troubleshooting</div>
+        </div>
+    </div>
+</section>
+
+<?php get_footer(); ?>
