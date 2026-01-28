@@ -329,4 +329,68 @@ nav a:hover {
 }
 
 
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
+body {
+  margin: 0;
+  background: #f4f6f8;
+  color: #222;
+}
+
+/* Section */
+section {
+  padding: 60px 20px;
+}
+
+/* Container */
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Title */
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+/* Grid layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Card design */
+.project-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.project-card h3 {
+  margin-top: 0;
+  color: #0b5ed7;
+  font-size: 24px;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Footer */
+footer {
+  background: #0f1f28;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  margin-top: 60px;
+}
