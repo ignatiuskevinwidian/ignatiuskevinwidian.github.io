@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ignatius Kevin Widian — IT Support & Security System Technician</title>
+  <meta name="description" content="IT Support & Security System Technician portfolio of Ignatius Kevin Widian" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #1A1614;
+      --bg-card: #1E1A16;
+      --bg-dark: #151210;
+      --gold: #C8A97E;
+      --gold-hover: #b8956b;
+      --white: #ffffff;
+      --text-dim: rgba(255,255,255,0.65);
+      --text-muted: rgba(255,255,255,0.35);
+      --border: rgba(255,255,255,0.08);
+      --font-sans: 'Inter', sans-serif;
+      --font-serif: 'Playfair Display', serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--font-sans);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      background: transparent;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-brand {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--white);
+    }
+    .nav-brand sup { font-size: 0.55em; vertical-align: super; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Center photo panel */
+    .hero-photo-panel {
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 36%;
+      background: var(--gold);
+      z-index: 1;
+      overflow: hidden;
+    }
+    .hero-photo-panel img {
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    /* Left column */
+    .hero-left {
+      position: absolute;
+      top: 0; bottom: 0; left: 0;
+      width: 32%;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 2.5rem 4rem;
+    }
+    .hero-greeting {
+      font-family: var(--font-sans);
+      font-weight: 900;
+      font-size: clamp(4rem, 8vw, 8rem);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .hero-greeting .dot { color: var(--gold); }
+    .hero-name-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .hero-name-dash {
+      width: 32px; height: 2px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+    .hero-name {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(0.95rem, 1.8vw, 1.4rem);
+      font-weight: 600;
+      color: var(--gold);
+    }
+    .hero-title {
+      font-size: clamp(0.7rem, 1vw, 0.875rem);
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 2.5rem;
+    }
+    .btn-cv {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--gold);
+      color: var(--bg);
+      padding: 0.85rem 1.8rem;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      width: fit-content;
+      transition: background 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-cv:hover { background: var(--gold-hover); }
+    .btn-cv svg { width: 16px; height: 16px; }
+
+    /* Right column */
+    .hero-right {
+      position: absolute;
+      top: 0; bottom: 0; right: 0;
+      width: 32%;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 6rem 2.5rem 3rem;
+    }
+    .hero-desc {
+      font-size: clamp(0.875rem, 1.2vw, 1rem);
+      color: var(--text-dim);
+      line-height: 1.75;
+      max-width: 380px;
+      margin-bottom: 2rem;
+    }
+    .btn-letstalk {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      font-family: var(--font-sans);
+    }
+    .btn-letstalk-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--gold);
+      transition: background 0.2s;
+    }
+    .btn-letstalk:hover .btn-letstalk-arrow { background: var(--gold-hover); }
+    .btn-letstalk-arrow svg { width: 16px; height: 16px; }
+
+    /* Spinning badge */
+    .spinning-badge-wrap {
+      display: flex;
+      justify-content: center;
+    }
+    .spinning-badge {
+      width: 9rem; height: 9rem;
+      animation: spin 12s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── MARQUEE ── */
+    .marquee-section {
+      background: var(--gold);
+      overflow: hidden;
+      padding: 1.1rem 0;
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 22s linear infinite;
+    }
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 3rem;
+      min-width: 160px;
+      color: #1A1200;
+      opacity: 0.8;
+    }
+    .marquee-item svg { height: 1.75rem; width: auto; fill: currentColor; }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+
+    /* ── SECTIONS COMMON ── */
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── ABOUT ── */
+    .about-section {
+      padding: 7rem 5rem;
+    }
+    .about-inner {
+      display: flex;
+      gap: 5rem;
+      align-items: flex-start;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .about-left { flex: 0 0 45%; }
+    .about-right { flex: 1; }
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--white);
+    }
+    .section-heading .gold { color: var(--gold); font-style: italic; }
+    .about-text {
+      font-size: 0.95rem;
+      color: var(--text-dim);
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .stat-val {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    /* ── SERVICES ── */
+    .services-section {
+      padding: 6rem 5rem;
+      border-top: 1px solid var(--border);
+    }
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 4rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .services-header p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      max-width: 300px;
+    }
+    .services-list {
+      max-width: 1100px;
+      margin: 0 auto;
+      border-top: 1px solid var(--border);
+    }
+    .service-row {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--border);
+      cursor: default;
+      transition: background 0.2s;
+    }
+    .service-row:hover { background: rgba(255,255,255,0.02); }
+    .service-num {
+      font-size: 0.8rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      font-family: monospace;
+      min-width: 28px;
+    }
+    .service-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+      color: var(--white);
+      flex: 0 0 220px;
+    }
+    .service-desc {
+      font-size: 0.875rem;
+      color: var(--text-dim);
+      line-height: 1.75;
+      flex: 1;
+    }
+    .service-arrow {
+      opacity: 0;
+      transition: opacity 0.3s;
+      color: var(--gold);
+    }
+    .service-row:hover .service-arrow { opacity: 1; }
+
+    /* ── PORTFOLIO ── */
+    .portfolio-section {
+      padding: 6rem 5rem;
+      border-top: 1px solid var(--border);
+    }
+    .portfolio-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 4rem;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .section-sublabel {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .portfolio-header a {
+      font-size: 0.875rem;
+      color: var(--text-dim);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
+    }
+    .portfolio-header a:hover { color: var(--gold); }
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .experience-card {
+      position: relative;
+      padding: 2.5rem;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .experience-card:hover {
+      border-color: rgba(200,169,126,0.25);
+      background: rgba(255,255,255,0.03);
+    }
+    .experience-card::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--gold) 0%, rgba(200,169,126,0) 100%);
+    }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .exp-num {
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-family: monospace;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .exp-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-top: 0.5rem;
+      line-height: 1.2;
+    }
+    .exp-company {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--gold);
+      font-size: 1rem;
+      margin-top: 0.35rem;
+    }
+    .exp-period-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .exp-now {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.7rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .exp-now-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 4px rgba(200,169,126,0.2);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 4px rgba(200,169,126,0.2); }
+      50% { box-shadow: 0 0 0 8px rgba(200,169,126,0.05); }
+    }
+    .exp-period {
+      padding: 0.45rem 1rem;
+      border: 1px solid rgba(200,169,126,0.3);
+      border-radius: 999px;
+      color: rgba(200,169,126,0.9);
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      font-weight: 500;
+    }
+    .exp-desc {
+      color: var(--text-dim);
+      line-height: 1.8;
+      font-size: 0.95rem;
+      margin-bottom: 2.25rem;
+    }
+    .exp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .exp-section-label {
+      color: var(--gold);
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 1.1rem;
+      font-weight: 600;
+    }
+    .exp-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .exp-list li {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.85rem;
+      line-height: 1.7;
+      margin-bottom: 0.6rem;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .exp-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+    @media (max-width: 700px) {
+      .exp-grid { grid-template-columns: 1fr; }
+      .experience-card { padding: 1.75rem 1.25rem; }
+    }
+
+    /* ── CERTIFICATES ── */
+    .certificates-section {
+      padding: 6rem 5rem;
+      border-top: 1px solid var(--border);
+      background: var(--bg-card);
+    }
+    .cert-header {
+      max-width: 1100px;
+      margin: 0 auto 3.5rem;
+      text-align: center;
+    }
+    .cert-header .section-label {
+      margin-bottom: 1rem;
+    }
+    .cert-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--white);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .cert-heading .gold-italic {
+      color: var(--gold);
+      font-style: italic;
+    }
+    .certificates-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .certificate-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 1.75rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .certificate-card:hover {
+      border-color: rgba(200,169,126,0.25);
+      transform: translateY(-3px);
+    }
+    .cert-glow {
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      opacity: 0.08;
+      filter: blur(20px);
+    }
+    .cert-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+    }
+    .cert-brand {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.35rem 0.7rem;
+      border-radius: 4px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+    }
+    .cert-brand.hikvision { background: rgba(230,0,18,0.1); border: 1px solid rgba(230,0,18,0.25); color: #E60012; }
+    .cert-brand.dahua { background: rgba(229,0,25,0.1); border: 1px solid rgba(229,0,25,0.25); color: #E50019; }
+    .cert-brand.nx { background: rgba(0,168,225,0.1); border: 1px solid rgba(0,168,225,0.25); color: #00A8E1; }
+    .cert-num {
+      color: rgba(255,255,255,0.3);
+      font-family: monospace;
+      font-size: 0.7rem;
+    }
+    .cert-code {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1.3;
+    }
+    .cert-fullname {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.85rem;
+      margin-top: 0.4rem;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+    .cert-validity {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 1rem;
+      padding: 0.4rem 0.75rem;
+      border: 1px solid rgba(200,169,126,0.25);
+      border-radius: 999px;
+      color: rgba(200,169,126,0.9);
+      font-size: 0.7rem;
+      width: fit-content;
+    }
+    .cert-desc {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.85rem;
+      line-height: 1.7;
+      margin-top: 1.25rem;
+    }
+    .cert-focus-wrap {
+      margin-top: 1.25rem;
+      flex-grow: 1;
+    }
+    .cert-focus-label {
+      color: var(--gold);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+      font-weight: 600;
+    }
+    .cert-focus-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cert-focus-list li {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.8rem;
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .cert-focus-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 4px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+    .cert-download {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-top: 1.75rem;
+      padding: 0.8rem 1.2rem;
+      border-radius: 6px;
+      background: rgba(200,169,126,0.08);
+      border: 1px solid rgba(200,169,126,0.3);
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .cert-download:hover {
+      background: var(--gold);
+      color: #1A1614;
+    }
+    .cert-download svg { stroke: currentColor; }
+    @media (max-width: 1000px) {
+      .certificates-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .certificates-grid { grid-template-columns: 1fr; }
+      .certificates-section { padding: 4rem 1.25rem; }
+    }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      padding: 7rem 5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .contact-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+    }
+    .contact-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 3rem;
+    }
+    .contact-heading .gold { color: var(--gold); font-style: italic; }
+    .contact-btns {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--bg);
+      padding: 1rem 2.5rem;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--gold-hover); }
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: border-color 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--gold); }
+
+    /* ── FOOTER ── */
+    .footer {
+      padding: 2rem 5rem;
+      border-top: 1px solid var(--border);
+      background: var(--bg-dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-copy {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { min-height: auto; }
+      .hero-photo-panel { position: relative; left: auto; transform: none; width: 100%; height: 60vw; }
+      .hero-left, .hero-right { position: relative; width: 100%; padding: 2rem 1.5rem; }
+      .hero { display: flex; flex-direction: column; }
+      .hero-right { justify-content: flex-start; flex-direction: column; }
+      .spinning-badge-wrap { justify-content: flex-start; margin-top: 2rem; }
+      .about-inner { flex-direction: column; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .about-section, .services-section, .portfolio-section,
+      .testimonials-section, .contact-section { padding: 4rem 1.5rem; }
+      .footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+      .service-row { flex-wrap: wrap; }
+      .navbar { padding: 1rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="#about">Tentang Saya</a></li>
+      <li><a href="#services">Keahlian</a></li>
+    </ul>
+    <div class="nav-brand">Kevin <sup>®</sup></div>
+    <ul class="nav-links">
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <!-- Center Photo Panel -->
+    <div class="hero-photo-panel">
+      <img src="hero-portrait.png" alt="Ignatius Kevin Widian — Designer" />
+    </div>
+
+    <!-- Left Text -->
+    <div class="hero-left fade-up visible">
+      <h1 class="hero-greeting">Hai<span class="dot">.</span></h1>
+      <div class="hero-name-row">
+        <div class="hero-name-dash"></div>
+        <p class="hero-name">Ignatius Kevin Widian</p>
+      </div>
+      <p class="hero-title">IT Support &amp; Security System Technician</p>
+      <a href="./kevin-widian-cv.pdf" class="btn-cv">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+        </svg>
+        Download CV
+      </a>
+    </div>
+
+    <!-- Right Text -->
+    <div class="hero-right">
+      <div class="fade-up visible">
+        <p class="hero-desc">
+          Berpengalaman sebagai IT Support dan teknisi security system dengan total pengalaman lebih dari 5 tahun. Memiliki keahlian dalam instalasi perangkat, konfigurasi sistem, troubleshooting, serta memastikan integrasi sistem keamanan berjalan dengan baik di lingkungan operasional.
+        </p>
+        <a href="#contact" class="btn-letstalk">
+          Lets Talk
+          <span class="btn-letstalk-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#1A1614" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+
+      <!-- Spinning Badge -->
+      <div class="spinning-badge-wrap">
+        <svg class="spinning-badge" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <path id="bp" d="M 60,60 m -46,0 a 46,46 0 1,1 92,0 a 46,46 0 1,1 -92,0" fill="none"/>
+          </defs>
+          <circle cx="60" cy="60" r="55" fill="none" stroke="rgba(200,169,126,0.3)" stroke-width="1"/>
+          <text font-size="11" letter-spacing="3.5" font-family="Inter, sans-serif" font-weight="500" fill="#C8A97E" text-anchor="start">
+            <textPath href="#bp" startOffset="0%">Supervisor • Security System •&nbsp;&nbsp;</textPath>
+          </text>
+          <circle cx="60" cy="60" r="5" fill="#C8A97E"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGO MARQUEE -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <!-- set 1 -->
+      <div class="marquee-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg></div>
+      <div class="marquee-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.02s-1.354-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.015-4.49-4.491S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.02s1.354 3.019 3.019 3.019h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.02s1.354 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.026-4.49 4.515-4.49c2.489 0 4.515 2.014 4.515 4.49S10.661 24 8.172 24zm0-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.019 3.019 3.019 3.019-1.355 3.019-3.019-1.354-3.019-3.019-3.019zm7.679.014h-.05c-2.478 0-4.492-2.015-4.492-4.491s2.014-4.49 4.491-4.49h.05c2.478 0 4.492 2.014 4.492 4.49s-2.014 4.491-4.491 4.491zm-.05-7.51c-1.665 0-3.019 1.355-3.019 3.02s1.354 3.019 3.019 3.019h.05c1.665 0 3.019-1.355 3.019-3.019s-1.354-3.02-3.019-3.02h-.05z"/></svg></div>
+      <div class="marquee-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.966 22.624l-1.69-4.281H8.122l3.892-9.144 5.662 13.425zM8.886 1.376H0v21.248zm6.228 0L24 22.624V1.376z"/></svg></div>
+      <div class="marquee-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 0h16v8h-8zM4 8h8l8 8H4zM4 16h8v8z"/></svg></div>
+      <div class="marquee-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.843 7.539s-1.903 5.847-2.01 6.231c-.068-.42-1.245-6.231-1.245-6.231h-3.58s-1.93 6.003-2.024 6.396C8.91 13.55 7.655 7.54 7.655 7.54H4.105S6.49 16.06 6.762 16.46c.293.434.65.54 1.203.54s1.255-.3 1.488-1.002c.21-.636 1.809-5.604 1.867-5.812.058.208 1.589 5.148 1.814 5.79.238.66.687 1.024 1.426 1.024.756 0 1.074-.214 1.35-.594.254-.352 2.88-9.867 2.88-9.867zm-5.858-4.042L9.42 6.061h4.93z"/></svg></div>
+      <div class="marquee-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.045 12.748L11.999 22l7.956-9.252L11.999 2zm7.955 7.497L4.89 11.997l7.11-8.25 7.11 8.25zm-7.11-8.998l7.11 4.5 7.11-4.5L12 2.25z"/></svg></div>
+      <div class="marquee-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-.141 5.679a1.415 1.415 0 1 1 0 2.83 1.415 1.415 0 0 1 0-2.83zm2.86 12.81h-4.483V9.115h4.483v9.374z"/></svg></div>
+      <!-- set 2 (duplicate for seamless loop) -->
+      <div class="marquee-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg></div>
+      <div class="marquee-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.02s-1.354-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.015-4.49-4.491S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.02s1.354 3.019 3.019 3.019h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.02s1.354 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.026-4.49 4.515-4.49c2.489 0 4.515 2.014 4.515 4.49S10.661 24 8.172 24zm0-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.019 3.019 3.019 3.019-1.355 3.019-3.019-1.354-3.019-3.019-3.019zm7.679.014h-.05c-2.478 0-4.492-2.015-4.492-4.491s2.014-4.49 4.491-4.49h.05c2.478 0 4.492 2.014 4.492 4.49s-2.014 4.491-4.491 4.491zm-.05-7.51c-1.665 0-3.019 1.355-3.019 3.02s1.354 3.019 3.019 3.019h.05c1.665 0 3.019-1.355 3.019-3.019s-1.354-3.02-3.019-3.02h-.05z"/></svg></div>
+      <div class="marquee-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.966 22.624l-1.69-4.281H8.122l3.892-9.144 5.662 13.425zM8.886 1.376H0v21.248zm6.228 0L24 22.624V1.376z"/></svg></div>
+      <div class="marquee-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 0h16v8h-8zM4 8h8l8 8H4zM4 16h8v8z"/></svg></div>
+      <div class="marquee-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.843 7.539s-1.903 5.847-2.01 6.231c-.068-.42-1.245-6.231-1.245-6.231h-3.58s-1.93 6.003-2.024 6.396C8.91 13.55 7.655 7.54 7.655 7.54H4.105S6.49 16.06 6.762 16.46c.293.434.65.54 1.203.54s1.255-.3 1.488-1.002c.21-.636 1.809-5.604 1.867-5.812.058.208 1.589 5.148 1.814 5.79.238.66.687 1.024 1.426 1.024.756 0 1.074-.214 1.35-.594.254-.352 2.88-9.867 2.88-9.867zm-5.858-4.042L9.42 6.061h4.93z"/></svg></div>
+      <div class="marquee-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.045 12.748L11.999 22l7.956-9.252L11.999 2zm7.955 7.497L4.89 11.997l7.11-8.25 7.11 8.25zm-7.11-8.998l7.11 4.5 7.11-4.5L12 2.25z"/></svg></div>
+      <div class="marquee-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-.141 5.679a1.415 1.415 0 1 1 0 2.83 1.415 1.415 0 0 1 0-2.83zm2.86 12.81h-4.483V9.115h4.483v9.374z"/></svg></div>
+    </div>
+  </div>
+
+  <!-- ABOUT / BIOGRAPHY -->
+  <section id="about" class="about-section">
+    <p class="section-label">BIOGRAPHY</p>
+    <div class="about-inner">
+      <div class="about-left fade-up">
+        <h2 class="section-heading">
+          Solving real-world problems,<br>
+          <span class="gold">through technology.</span>
+        </h2>
+      </div>
+      <div class="about-right fade-up">
+        <p class="about-text">
+          Perjalanan karier saya dimulai sebagai IT Support, di mana saya membangun fondasi dalam troubleshooting dan dukungan teknis kepada pengguna. Dalam lebih dari 4 tahun terakhir, saya berkembang sebagai teknisi sistem keamanan yang menangani instalasi dan pemeliharaan CCTV serta perangkat jaringan secara langsung di lapangan.
+        </p>
+        <p class="about-text">
+          Saya menikmati proses memecahkan masalah teknis dalam kondisi nyata, mulai dari analisa gangguan hingga memastikan sistem berjalan dengan stabil dan dapat diandalkan. Bagi saya, teknologi bukan hanya tentang perangkat, tetapi tentang menciptakan solusi yang benar-benar berguna.
+        </p>
+        <p class="about-text">
+          Saat ini, saya juga mulai mengembangkan kemampuan di bidang jaringan dan keamanan sistem untuk meningkatkan kompetensi ke level berikutnya.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="services-section">
+    <div class="services-header">
+      <h2 class="section-heading">Keahlian</h2>
+    </div>
+    <div class="services-list">
+      <div class="service-row fade-up">
+        <span class="service-num">01</span>
+        <span class="service-title">Security System Implementation</span>
+        <span class="service-desc">Instalasi, konfigurasi, dan perawatan sistem CCTV, termasuk setup DVR/NVR, penentuan posisi kamera, Access Control, VMS (Video Management System) dll, serta troubleshooting untuk memastikan sistem keamanan berjalan optimal.</span>
+        <svg class="service-arrow" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </div>
+      <div class="service-row fade-up">
+        <span class="service-num">02</span>
+        <span class="service-title">Network & Device Configuration</span>
+        <span class="service-desc">Konfigurasi jaringan dasar, pengaturan IP address, konektivitas perangkat, serta analisa dan perbaikan gangguan jaringan.</span>
+        <svg class="service-arrow" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </div>
+      <div class="service-row fade-up">
+        <span class="service-num">03</span>
+        <span class="service-title">Technical Support & Troubleshooting</span>
+        <span class="service-desc">Dukungan teknis untuk hardware dan software, instalasi sistem, printer, telepon, serta penyelesaian masalah untuk memastikan operasional berjalan lancar.</span>
+        <svg class="service-arrow" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </div>
+      <div class="service-row fade-up">
+        <span class="service-num">04</span>
+        <span class="service-title">Preventive Maintenance & Monitoring</span>
+        <span class="service-desc">Pemeriksaan rutin, perawatan preventif, dan memastikan seluruh perangkat bekerja dengan stabil dan minim gangguan.</span>
+        <svg class="service-arrow" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="portfolio-section">
+    <div class="portfolio-header">
+      <div>
+        <h2 class="section-heading">Work Experience</h2>
+      </div>
+    </div>
+    <div class="experience-list">
+
+      <article class="experience-card fade-up">
+        <div class="exp-header">
+          <div>
+            <span class="exp-num">01 / Experience</span>
+            <h3 class="exp-title">Supervisor Security System</h3>
+            <p class="exp-company">Putradabo Perkasa</p>
+          </div>
+          <div class="exp-period-wrap">
+            <span class="exp-now"><span class="exp-now-dot"></span>Now</span>
+            <span class="exp-period">1 Januari 2022 – Sekarang</span>
+          </div>
+        </div>
+        <p class="exp-desc">
+          Mengawasi operasional, instalasi, dan pemeliharaan sistem keamanan terintegrasi, termasuk ACS, CCTV, Video Management System, server, serta perangkat pendukung lainnya untuk memastikan sistem berjalan stabil, aman, dan sesuai standar.
+        </p>
+        <div class="exp-grid">
+          <div>
+            <h4 class="exp-section-label">Pekerjaan Utama</h4>
+            <ul class="exp-list">
+              <li>Mengkoordinasikan tim teknisi dalam instalasi dan maintenance sistem (ACS, CCTV, VMS, Barrier Gate, Flap Barrier, dll)</li>
+              <li>Mengawasi implementasi sistem keamanan sesuai standar dan kebutuhan site</li>
+              <li>Melakukan pengecekan dan validasi konfigurasi perangkat (Server, NVR, Switch, VMS)</li>
+              <li>Mengelola dan memastikan integrasi antar sistem (CCTV, ACS, Visitor Management, Patrol System) berjalan dengan baik</li>
+              <li>Monitoring performa sistem dan memastikan seluruh perangkat dalam kondisi optimal</li>
+              <li>Berkoordinasi dengan vendor, client, dan internal terkait kebutuhan dan kendala sistem</li>
+              <li>Melakukan dokumentasi teknis dan pelaporan pekerjaan</li>
+              <li>Pembuatan dokumen pendukung seperti material approval, timeline activities kurva S, shopdrawing, topology, as built drawing, SLD</li>
+              <li>Melakukan survey dan menentukan kebutuhan client</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="exp-section-label">Hasil</h4>
+            <ul class="exp-list">
+              <li>Meningkatkan stabilitas dan keandalan sistem keamanan di berbagai lokasi</li>
+              <li>Meminimalkan downtime melalui koordinasi dan maintenance yang terjadwal</li>
+              <li>Memastikan integrasi sistem berjalan optimal dan sesuai standar operasional</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="experience-card fade-up">
+        <div class="exp-header">
+          <div>
+            <span class="exp-num">02 / Experience</span>
+            <h3 class="exp-title">Teknisi Security System</h3>
+            <p class="exp-company">Putradabo Perkasa</p>
+          </div>
+          <div class="exp-period-wrap">
+            <span class="exp-period">12 April 2021 – 31 Desember 2021</span>
+          </div>
+        </div>
+        <p class="exp-desc">
+          Menangani instalasi, konfigurasi, serta pemeliharaan sistem keamanan terintegrasi meliputi Access Control System (ACS), CCTV, Video Management System (VMS), serta perangkat pendukung untuk memastikan sistem berjalan optimal dan stabil.
+        </p>
+        <div class="exp-grid">
+          <div>
+            <h4 class="exp-section-label">Pekerjaan Utama</h4>
+            <ul class="exp-list">
+              <li>Instalasi dan konfigurasi perangkat CCTV, ACS, NVR, serta sistem pendukung lainnya</li>
+              <li>Setup dan konfigurasi Video Management System (VMS) dan integrasi antar sistem</li>
+              <li>Penarikan dan penataan kabel (UTP / fiber / power) sesuai standar instalasi</li>
+              <li>Konfigurasi jaringan dasar (IP Address, koneksi switch, dan perangkat terkait)</li>
+              <li>Troubleshooting perangkat dan sistem (kamera, NVR, server, jaringan)</li>
+              <li>Melakukan preventive maintenance (pengecekan rutin, pembersihan, update sistem)</li>
+              <li>Melakukan corrective maintenance (perbaikan atau penggantian perangkat bermasalah)</li>
+              <li>Instalasi dan konfigurasi perangkat akses seperti Flap Barrier, Barrier Gate, dan Visitor Management System</li>
+              <li>Monitoring performa sistem dan memastikan seluruh perangkat dalam kondisi normal</li>
+              <li>Dokumentasi instalasi, konfigurasi, serta pelaporan pekerjaan</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="exp-section-label">Hasil</h4>
+            <ul class="exp-list">
+              <li>Menjaga stabilitas dan performa sistem keamanan di berbagai lokasi</li>
+              <li>Mengurangi downtime melalui penanganan masalah yang cepat dan tepat</li>
+              <li>Memastikan seluruh sistem keamanan berjalan sesuai standar operasional</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="experience-card fade-up">
+        <div class="exp-header">
+          <div>
+            <span class="exp-num">03 / Experience</span>
+            <h3 class="exp-title">IT Support</h3>
+            <p class="exp-company">Super Teknik</p>
+          </div>
+          <div class="exp-period-wrap">
+            <span class="exp-period">15 Juli 2019 – 22 Oktober 2021</span>
+          </div>
+        </div>
+        <p class="exp-desc">
+          Menangani dukungan teknis harian untuk memastikan seluruh sistem, perangkat, dan pengguna dapat beroperasi dengan lancar, stabil, dan efisien.
+        </p>
+        <div class="exp-grid">
+          <div>
+            <h4 class="exp-section-label">Pekerjaan Utama</h4>
+            <ul class="exp-list">
+              <li>Instalasi dan konfigurasi sistem operasi serta software pendukung</li>
+              <li>Troubleshooting hardware, software, dan jaringan</li>
+              <li>Setup dan konfigurasi perangkat (PC, laptop, printer, dan perangkat lainnya)</li>
+              <li>Memberikan dukungan teknis kepada pengguna (on-site dan remote)</li>
+              <li>Konfigurasi jaringan dasar (IP Address, koneksi LAN/WiFi)</li>
+              <li>Melakukan maintenance dan update sistem secara berkala</li>
+              <li>Dokumentasi konfigurasi dan pelaporan pekerjaan</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="exp-section-label">Hasil</h4>
+            <ul class="exp-list">
+              <li>Menjaga stabilitas dan performa sistem untuk operasional harian</li>
+              <li>Mengurangi downtime pengguna melalui penanganan masalah yang cepat dan efektif</li>
+              <li>Meningkatkan efisiensi kerja melalui dukungan teknis yang responsif</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section id="certificates" class="certificates-section">
+    <div class="cert-header">
+      <p class="section-label">CERTIFICATES</p>
+      <h2 class="cert-heading">Sertifikat &amp; <span class="gold-italic">kompetensi.</span></h2>
+    </div>
+    <div class="certificates-grid">
+
+      <article class="certificate-card fade-up">
+        <div class="cert-glow" style="background:#E60012"></div>
+        <div class="cert-top">
+          <span class="cert-brand hikvision">HIKVISION</span>
+          <span class="cert-num">01</span>
+        </div>
+        <h3 class="cert-code">CGSA – CCTV</h3>
+        <p class="cert-fullname">Certified General Security Associate</p>
+        <span class="cert-validity">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Berlaku sampai Agustus 2029
+        </span>
+        <p class="cert-desc">Sertifikat dasar terkait sistem keamanan berbasis CCTV.</p>
+        <div class="cert-focus-wrap">
+          <h4 class="cert-focus-label">Fokus</h4>
+          <ul class="cert-focus-list">
+            <li>Konsep dasar CCTV</li>
+            <li>Instalasi dan konfigurasi kamera</li>
+            <li>Monitoring &amp; recording system</li>
+            <li>Troubleshooting dasar</li>
+          </ul>
+        </div>
+        <a class="cert-download" href="./certificates/cgsacctv.pdf" download>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Sertifikat
+        </a>
+      </article>
+
+      <article class="certificate-card fade-up">
+        <div class="cert-glow" style="background:#E60012"></div>
+        <div class="cert-top">
+          <span class="cert-brand hikvision">HIKVISION</span>
+          <span class="cert-num">02</span>
+        </div>
+        <h3 class="cert-code">HCSA – HIPC</h3>
+        <p class="cert-fullname">Hikvision Certified Security Associate – Hikvision IP Camera</p>
+        <span class="cert-validity">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Berlaku sampai November 2027
+        </span>
+        <p class="cert-desc">Sertifikat khusus kamera IP dari Hikvision.</p>
+        <div class="cert-focus-wrap">
+          <h4 class="cert-focus-label">Fokus</h4>
+          <ul class="cert-focus-list">
+            <li>Konfigurasi IP Camera</li>
+            <li>Setup jaringan pada CCTV</li>
+            <li>Basic video streaming &amp; encoding</li>
+            <li>Integrasi kamera ke system</li>
+          </ul>
+        </div>
+        <a class="cert-download" href="./certificates/hcsahipc.pdf" download>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Sertifikat
+        </a>
+      </article>
+
+      <article class="certificate-card fade-up">
+        <div class="cert-glow" style="background:#E60012"></div>
+        <div class="cert-top">
+          <span class="cert-brand hikvision">HIKVISION</span>
+          <span class="cert-num">03</span>
+        </div>
+        <h3 class="cert-code">HCSA – HNET</h3>
+        <p class="cert-fullname">Hikvision Network</p>
+        <span class="cert-validity">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Berlaku sampai November 2027
+        </span>
+        <p class="cert-desc">Sertifikat jaringan untuk sistem Hikvision.</p>
+        <div class="cert-focus-wrap">
+          <h4 class="cert-focus-label">Fokus</h4>
+          <ul class="cert-focus-list">
+            <li>IP addressing &amp; subnetting</li>
+            <li>Network topology</li>
+            <li>Switch &amp; routing basic</li>
+            <li>Troubleshooting jaringan</li>
+          </ul>
+        </div>
+        <a class="cert-download" href="./certificates/hcsahnet.pdf" download>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Sertifikat
+        </a>
+      </article>
+
+      <article class="certificate-card fade-up">
+        <div class="cert-glow" style="background:#E60012"></div>
+        <div class="cert-top">
+          <span class="cert-brand hikvision">HIKVISION</span>
+          <span class="cert-num">04</span>
+        </div>
+        <h3 class="cert-code">HCSA – HACE</h3>
+        <p class="cert-fullname">Hikvision Access Control</p>
+        <span class="cert-validity">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Berlaku sampai November 2027
+        </span>
+        <p class="cert-desc">Sertifikasi sistem Access Control.</p>
+        <div class="cert-focus-wrap">
+          <h4 class="cert-focus-label">Fokus</h4>
+          <ul class="cert-focus-list">
+            <li>Door access system (card, fingerprint, dll)</li>
+            <li>Integrasi dengan CCTV</li>
+            <li>User management</li>
+            <li>Security control system</li>
+          </ul>
+        </div>
+        <a class="cert-download" href="./certificates/hcsahace.pdf" download>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Sertifikat
+        </a>
+      </article>
+
+      <article class="certificate-card fade-up">
+        <div class="cert-glow" style="background:#E50019"></div>
+        <div class="cert-top">
+          <span class="cert-brand dahua">DAHUA</span>
+          <span class="cert-num">05</span>
+        </div>
+        <h3 class="cert-code">DHCA – DOLYNK</h3>
+        <p class="cert-fullname">Dahua Certification</p>
+        <span class="cert-validity">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Berlaku sampai Oktober 2027
+        </span>
+        <p class="cert-desc">Sertifikasi dari Dahua Technology untuk platform Dolynk.</p>
+        <div class="cert-focus-wrap">
+          <h4 class="cert-focus-label">Fokus</h4>
+          <ul class="cert-focus-list">
+            <li>Cloud CCTV (Dolynk platform)</li>
+            <li>Remote monitoring</li>
+            <li>Device integration</li>
+            <li>Mobile &amp; remote access system</li>
+          </ul>
+        </div>
+        <a class="cert-download" href="./certificates/dhcadolynk.pdf" download>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Sertifikat
+        </a>
+      </article>
+
+      <article class="certificate-card fade-up">
+        <div class="cert-glow" style="background:#00A8E1"></div>
+        <div class="cert-top">
+          <span class="cert-brand nx">NX WITNESS</span>
+          <span class="cert-num">06</span>
+        </div>
+        <h3 class="cert-code">NX Witness</h3>
+        <p class="cert-fullname">Network Optix VMS</p>
+        <span class="cert-validity">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Diterbitkan Juli 2025
+        </span>
+        <p class="cert-desc">Sertifikasi Video Management System (VMS) dari Network Optix.</p>
+        <div class="cert-focus-wrap">
+          <h4 class="cert-focus-label">Fokus</h4>
+          <ul class="cert-focus-list">
+            <li>Video Management System (VMS)</li>
+            <li>Server &amp; client setup</li>
+            <li>Video analytics</li>
+            <li>Multi-site monitoring</li>
+            <li>Advanced system integration</li>
+          </ul>
+        </div>
+        <a class="cert-download" href="./certificates/nxwitnessvms.pdf" download>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Sertifikat
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <p class="contact-label">Get In Touch</p>
+    <h2 class="contact-heading">
+      Let's work together.<br>
+      <span class="gold">extraordinary.</span>
+    </h2>
+    <div class="contact-btns">
+      <a href="https://wa.me/08132285386" class="btn-primary">Contact me</a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ignatiuskevinwidian@gmail.com" target="_blank" class="btn-outline">Send Email</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="footer-copy">&copy; <span id="year"></span> Ignatius Kevin Widian</p>
+    <ul class="footer-links">
+      <li><a href="https://www.linkedin.com/in/ignatius-kevin-widian-992721401?utm_source=share_via&utm_content=profile&utm_medium=member_android">LinkedIn</a></li>
+      <li><a href="https://www.tiktok.com/@xevinnn24?_r=1&_t=ZS-95nReZN4Vfw">TikTok</a></li>
+      <li><a href="https://www.instagram.com/vancaels?igsh=MWMzM25jYjlvbXV5YQ==">Instagram</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Scroll reveal with IntersectionObserver
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+    document.querySelectorAll('.fade-up:not(.visible)').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
