@@ -1558,10 +1558,6 @@ export default function Home() {
               }}
             >
               {t("contact", "headlineLine1")}
-              <br />
-              <span style={{ color: "#C8A97E", fontStyle: "italic" }}>
-                {t("contact", "headlineLine2")}
-              </span>
             </h2>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
