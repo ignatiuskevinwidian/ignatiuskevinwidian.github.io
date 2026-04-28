@@ -1035,8 +1035,7 @@ export default function Home() {
             >
               {t("about", "headlineLine1")}
               <br />
-              <span style={{ color: "#C8A97E" }}>{t("about", "headlineLine2")}</span>
-            </h2>
+            
           </motion.div>
 
           <motion.div
