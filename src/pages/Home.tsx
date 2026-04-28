@@ -518,8 +518,7 @@ const UI = {
   },
   contact: {
     label: { id: "HUBUNGI", en: "GET IN TOUCH" },
-    headlineLine1: { id: "Mari bekerja sama", en: "Let's work together" },
-    headlineLine2: { id: "menciptakan sesuatu yang luar biasa.", en: "to create something extraordinary." },
+    headlineLine1: { id: "Mari bekerja sama.", en: "Let's work together." },
     contactMe: { id: "HUBUNGI SAYA", en: "CONTACT ME" },
     sendEmail: { id: "KIRIM EMAIL", en: "SEND EMAIL" },
   },
@@ -1035,7 +1034,8 @@ export default function Home() {
             >
               {t("about", "headlineLine1")}
               <br />
-            
+              <span style={{ color: "#C8A97E" }}>{t("about", "headlineLine2")}</span>
+            </h2>
           </motion.div>
 
           <motion.div
@@ -1663,10 +1663,6 @@ export default function Home() {
               }}
             >
               {t("contact", "headlineLine1")}
-              <br />
-              <span style={{ color: "#C8A97E", fontStyle: "italic" }}>
-                {t("contact", "headlineLine2")}
-              </span>
             </h2>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
