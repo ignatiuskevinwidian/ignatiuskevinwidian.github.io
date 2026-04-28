@@ -45,10 +45,11 @@ function LogoMarquee() {
         {ALL_BRAND_LOGOS.map((logo, i) => (
           <div
             key={i}
-            className="flex items-center justify-center"
+            className="marquee-item flex items-center justify-center"
             style={{ minWidth: 240, padding: "0 28px" }}
           >
             <div
+              className="marquee-logo-box"
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -649,13 +650,115 @@ export default function Home() {
       className="min-h-screen text-white overflow-x-hidden"
       style={{ background: "#1A1614", fontFamily: "'Inter', sans-serif" }}
     >
+      {/* ───────── MOBILE RESPONSIVE OVERRIDES ───────── */}
+      <style>{`
+        @media (max-width: 768px) {
+          .main-nav {
+            padding: 0.85rem 1rem !important;
+            gap: 0.5rem;
+          }
+          .nav-links {
+            gap: 0.75rem !important;
+            font-size: 0.7rem !important;
+          }
+          .nav-logo {
+            font-size: 1.25rem !important;
+          }
+
+          .hero-section {
+            min-height: auto !important;
+            overflow: visible !important;
+            padding-top: 4rem !important;
+          }
+          .hero-image-col {
+            position: relative !important;
+            left: auto !important;
+            top: auto !important;
+            bottom: auto !important;
+            transform: none !important;
+            width: 100% !important;
+            height: 60vh !important;
+            margin: 0 auto !important;
+          }
+          .hero-left-col {
+            position: relative !important;
+            width: 100% !important;
+            top: auto !important;
+            bottom: auto !important;
+            left: auto !important;
+            padding: 2.5rem 1.25rem 1rem !important;
+          }
+          .hero-left-col h1 {
+            font-size: 3.75rem !important;
+          }
+          .hero-right-col {
+            position: relative !important;
+            width: 100% !important;
+            top: auto !important;
+            bottom: auto !important;
+            right: auto !important;
+            padding: 1rem 1.25rem 3rem !important;
+          }
+          .spinning-badge-wrap {
+            margin-top: 2rem;
+          }
+
+          .marquee-item {
+            min-width: 160px !important;
+            padding: 0 14px !important;
+          }
+          .marquee-logo-box {
+            width: 110px !important;
+            height: 64px !important;
+          }
+
+          .section-padded {
+            padding-left: 1.25rem !important;
+            padding-right: 1.25rem !important;
+            padding-top: 4rem !important;
+            padding-bottom: 4rem !important;
+          }
+
+          .exp-card {
+            padding: 1.5rem !important;
+          }
+          .exp-card-grid {
+            grid-template-columns: 1fr !important;
+            gap: 1.5rem !important;
+          }
+
+          .cert-card {
+            padding: 1.25rem !important;
+          }
+
+          .about-stack {
+            gap: 2.5rem !important;
+          }
+
+          .footer-padded {
+            padding: 1.5rem 1.25rem !important;
+            gap: 1rem !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .hero-left-col h1 {
+            font-size: 3rem !important;
+          }
+          .nav-links {
+            gap: 0.5rem !important;
+            font-size: 0.65rem !important;
+          }
+        }
+      `}</style>
+
       {/* ───────── NAVBAR ───────── */}
       <nav
-        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-5"
+        className="main-nav fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-5"
         style={{ background: "transparent" }}
       >
         <div
-          className="flex gap-8 text-sm font-medium"
+          className="nav-links flex gap-8 text-sm font-medium"
           style={{ color: "rgba(255,255,255,0.75)", letterSpacing: "0.04em" }}
         >
           <button
@@ -675,7 +778,7 @@ export default function Home() {
         </div>
 
         <div
-          className="text-2xl italic font-bold"
+          className="nav-logo text-2xl italic font-bold"
           style={{
             fontFamily: "'Playfair Display', serif",
             color: "white",
@@ -687,7 +790,7 @@ export default function Home() {
         </div>
 
         <div
-          className="flex gap-8 text-sm font-medium"
+          className="nav-links flex gap-8 text-sm font-medium"
           style={{ color: "rgba(255,255,255,0.75)", letterSpacing: "0.04em" }}
         >
           <button
@@ -709,10 +812,11 @@ export default function Home() {
 
       {/* ───────── HERO ───────── */}
       <section
-        className="relative"
+        className="hero-section relative"
         style={{ minHeight: "100dvh", paddingTop: 0, overflow: "hidden" }}
       >
         <div
+          className="hero-image-col"
           style={{
             position: "absolute",
             top: 0,
@@ -746,7 +850,7 @@ export default function Home() {
         </div>
 
         <div
-          className="absolute flex flex-col justify-center px-10 lg:px-16"
+          className="hero-left-col absolute flex flex-col justify-center px-10 lg:px-16"
           style={{
             top: 0,
             bottom: 0,
@@ -831,7 +935,7 @@ export default function Home() {
         </div>
 
         <div
-          className="absolute flex flex-col px-10 lg:px-16"
+          className="hero-right-col absolute flex flex-col px-10 lg:px-16"
           style={{
             top: 0,
             bottom: 0,
@@ -890,7 +994,7 @@ export default function Home() {
             </button>
           </motion.div>
 
-          <div className="flex justify-center">
+          <div className="spinning-badge-wrap flex justify-center">
             <SpinningBadge />
           </div>
         </div>
@@ -900,7 +1004,7 @@ export default function Home() {
       <LogoMarquee />
 
       {/* ───────── BIOGRAPHY / ABOUT ───────── */}
-      <section id="about" className="py-28 px-10 lg:px-20">
+      <section id="about" className="section-padded py-28 px-10 lg:px-20">
         <div
           className="text-center text-xs font-semibold tracking-widest mb-20"
           style={{
@@ -912,7 +1016,7 @@ export default function Home() {
           {t("about", "label")}
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-20 items-start max-w-6xl mx-auto">
+        <div className="about-stack flex flex-col lg:flex-row gap-20 items-start max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -957,7 +1061,7 @@ export default function Home() {
       {/* ───────── SERVICES ───────── */}
       <section
         id="services"
-        className="py-24 px-10 lg:px-20"
+        className="section-padded py-24 px-10 lg:px-20"
         style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
       >
         <div className="max-w-6xl mx-auto">
@@ -1034,7 +1138,7 @@ export default function Home() {
       {/* ───────── PORTFOLIO / EXPERIENCE ───────── */}
       <section
         id="portfolio"
-        className="py-24 px-10 lg:px-20"
+        className="section-padded py-24 px-10 lg:px-20"
         style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
       >
         <div className="max-w-6xl mx-auto">
@@ -1061,6 +1165,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.7, delay: idx * 0.1 }}
+                className="exp-card"
                 style={{
                   padding: "2.5rem",
                   borderRadius: 8,
@@ -1176,7 +1281,7 @@ export default function Home() {
                   {exp.description[lang]}
                 </p>
 
-                <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
+                <div className="exp-card-grid grid md:grid-cols-2 gap-x-10 gap-y-8">
                   <div>
                     <h4
                       style={{
@@ -1271,7 +1376,7 @@ export default function Home() {
       {/* ───────── CERTIFICATES ───────── */}
       <section
         id="certificates"
-        className="py-24 px-10 lg:px-20"
+        className="section-padded py-24 px-10 lg:px-20"
         style={{
           borderTop: "1px solid rgba(255,255,255,0.08)",
           background: "#1E1A16",
@@ -1313,6 +1418,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: (idx % 3) * 0.1 }}
+                className="cert-card"
                 style={{
                   position: "relative",
                   display: "flex",
@@ -1527,15 +1633,15 @@ export default function Home() {
       {/* ───────── CONTACT ───────── */}
       <section
         id="contact"
-        className="py-28 px-10 lg:px-20"
+        className="section-padded py-28 px-10 lg:px-20"
         style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
       >
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 60, filter: "blur(10px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
           >
             <div
               className="text-xs font-semibold mb-8"
@@ -1558,6 +1664,10 @@ export default function Home() {
               }}
             >
               {t("contact", "headlineLine1")}
+              <br />
+              <span style={{ color: "#C8A97E", fontStyle: "italic" }}>
+                {t("contact", "headlineLine2")}
+              </span>
             </h2>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -1621,7 +1731,7 @@ export default function Home() {
 
       {/* ───────── FOOTER ───────── */}
       <footer
-        className="py-8 px-10 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-4"
+        className="footer-padded py-8 px-10 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-4"
         style={{
           borderTop: "1px solid rgba(255,255,255,0.08)",
           background: "#151210",
