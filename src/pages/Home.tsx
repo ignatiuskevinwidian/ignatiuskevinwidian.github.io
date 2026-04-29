@@ -1742,7 +1742,7 @@ export default function Home() {
         >
           &copy; {new Date().getFullYear()} Ignatius Kevin Widian
         </div>
-        <div className="flex gap-8">
+        <div className="flex gap-8 md:mr-32">
           {[
             { label: "LinkedIn", href: LINKEDIN_URL },
             { label: "TIKTOK", href: TIKTOK_URL },
