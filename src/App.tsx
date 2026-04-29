@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import { useEffect } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ function App() {
           <Router />
         </WouterRouter>
         <Toaster />
+        <SpeedInsights />
       </TooltipProvider>
     </QueryClientProvider>
   );
